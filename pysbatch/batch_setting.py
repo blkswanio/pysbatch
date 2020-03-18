@@ -47,7 +47,7 @@ class batch_setting_new:
         # print(" ".join(sub))
         process = sps.Popen(" ".join(sub), shell=True, stdout=sps.PIPE)
         stdout = process.communicate()[0].decode("utf-8")
-        return (stdout)
+        return int(stdout.strip('\n').split(' ')[-1])
 
 
 # old type is kept to main the compatibility
@@ -178,4 +178,4 @@ class batch_setting:
         # print(" ".join(sub))
         process = sps.Popen(" ".join(sub), shell=True, stdout=sps.PIPE)
         stdout = process.communicate()[0].decode("utf-8")
-        return (stdout)
+        return int(stdout.strip('\n').split(' ')[-1])
